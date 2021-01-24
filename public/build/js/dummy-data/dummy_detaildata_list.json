@@ -1,0 +1,30 @@
+{
+    "status": "SUCCESS",
+    "dataTotal": 1,
+    "data": [
+        {
+            "id": 0,
+            "name": "Detail Data List 1",
+            "description":"description one",
+            "category_name":"Category 1",
+            "data_date":"2020-03-01",
+            "default_thumbnail_url":"./build/images/dummy/pict 3.png",
+            "image":"./build/images/dummy/pict 3.png",
+            "location":"bandung",
+            "data_name":"data 1",
+            "isfree": 1
+        },
+        {
+            "id": 0,
+            "name": "Detail Data List 2",
+            "description":"description two",
+            "category_name":"Category 1",
+            "data_date":"2020-03-01",
+            "default_thumbnail_url":"./build/images/dummy/pict 2.png",
+            "image":"./build/images/dummy/pict 2.png",
+            "location":"bandung",
+            "data_name":"data 1",
+            "isfree": 1
+        }
+    ]
+}

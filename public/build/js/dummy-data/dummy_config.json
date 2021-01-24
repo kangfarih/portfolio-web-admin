@@ -1,0 +1,60 @@
+{
+    "status": "SUCCESS",
+    "data": [
+        {
+            "id": "about_content",
+            "config_name": "about_content",
+            "config_value": "about_content"
+        },
+        {
+            "id": "about_image",
+            "config_name": "about_image",
+            "config_value": "./build/images/dummy/pict 4.png"
+        },
+        {
+            "id": "about_total_images",
+            "config_name": "about_total_images",
+            "config_value": "about_total_images"
+        },
+        {
+            "id": "about_total_categorys",
+            "config_name": "about_total_categorys",
+            "config_value": "about_total_categorys"
+        },
+        {
+            "id": "about_total_projects",
+            "config_name": "about_total_projects",
+            "config_value": "about_total_projects"
+        },
+        {
+            "id": "contact_address",
+            "config_name": "contact_address",
+            "config_value": "contact_address"
+        },
+        {
+            "id": "contact_email",
+            "config_name": "contact_email",
+            "config_value": "contact_email"
+        },
+        {
+            "id": "contact_latlong",
+            "config_name": "contact_latlong",
+            "config_value": "contact_latlong"
+        },
+        {
+            "id": "contact_mobile",
+            "config_name": "contact_mobile",
+            "config_value": "contact_mobile"
+        },
+        {
+            "id": "contact_office",
+            "config_name": "contact_office",
+            "config_value": "contact_office"
+        },
+        {
+            "id": "contact_workday",
+            "config_name": "contact_workday",
+            "config_value": "contact_workday"
+        }
+    ]
+}

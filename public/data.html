@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CMS Plexus</title>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap-select -->
+    <link rel="stylesheet" href="vendors/bootstrap-select/css/bootstrap-select.min.css">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.css" rel="stylesheet">
+    <link href="build/css/self-style.css" rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body class="nav-md">
+
+
+    <div id="loader">
+        <img src="build/images/loading1.gif" width="10%">
+    </div>
+
+    <div class="container body">
+        <div class="main_container">
+            <!-- left menu -->
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title">KK
+                            <span> CMS Plexus</span>
+                        </a>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <br/>
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3></h3>
+                            <ul class="nav side-menu">
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+            <!-- /left menu -->
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span name="nama-user"></span>
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li>
+                                        <a href="profile.html"> Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" onclick="Helper.Logout()">
+                                            <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <!-- page content -->
+
+            <div class="right_col" role="main">
+                <!-- modals -->
+                <div id="modal-edit-add" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <!-- alert info modal edit add -->
+                            <div name="alert-info-modal-edit-add" class="alert fade alert-success hidden" style="border-radius: 0px" role="alert">
+                                <button onclick="Helper.HideAlertModalEditAdd()" type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <span name="alert-info-modal-edit-add"></span>
+                            </div>
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 name="title-modal-form" class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <form name="edit-add-data-form" class="form-horizontal form-label-left" data-parsley-validate>
+                                    <!-- ID PROJECT-->
+                                    <div name="cont-id-data" class="form-group hidden">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id-data">Id Data
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" name="id-data" disabled="disabled" class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <!-- ID CATEGORY-->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id-category">Category
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <Select name="id-category" class="form-control selectpicker col-md-7 col-xs-12" data-live-search="true" data-title="Select Category" required>
+                                                
+                                            </Select>
+                                        </div>
+                                    </div>
+                                    <!-- NAME -->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name-data">Name
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" name="name-data" class="form-control col-md-7 col-xs-12" required>
+                                        </div>
+                                    </div>
+                                    <!-- DESCRIPTION -->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Description
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <textarea type="textarea" name="description" rows="5" class="form-control col-md-7 col-xs-12" style="resize:none;" required></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- IMAGE -->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">Cover Data
+                                            <span name="image" class="required">* (800x338)</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <img id="image" name="image" height="100px">
+                                            <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg" class="form-control col-md-7 col-xs-12"
+                                             data-parsley-trigger="change" data-parsley-imagemindimensions="800x338" required>
+                                        </div>
+                                    </div>
+                                    <!-- PROJECT DATE -->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="data-date">Data Date
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="date" name="data-date" class="form-control col-md-7 col-xs-12" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- ISFREE -->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">Is Free
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="checkbox" name="isfree" checked>
+                                        </div>
+                                    </div>
+                                    <!-- SUBMIT BUTTON -->
+                                    <div name="cont-btn-edit-add-data" class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                            <button name="btn-submit" onclick="PageScript.PostDataCheck()" class="btn btn-success btn-block needsclick"></button>
+                                        </div>
+                                    </div>
+                                    <div name="loading-edit-add-data" class="attr-display-none" style="text-align:center">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                            <img src="build/images/loading1.gif" width="10%">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+
+                <!-- modals -->
+                <div id="modal-delete" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title">Hapus Data</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" name="id-delete-data" disabled="disabled" class="form-control col-md-7 col-xs-12 hidden">
+                                <p name="detail-delete" style="text-align: center"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <div name="cont-btn-delete-data" class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                        <button onclick="PageScript.PostDeleteData()" class="btn btn-danger btn-block needsclick">HAPUS</button>
+                                    </div>
+                                </div>
+
+                                <div name="loading-delete-data" class="attr-display-none" style="text-align: center">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                        <img src="build/images/loading1.gif" width="10%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+
+                <!-- alert info -->
+                <div name="alert-info-content" class="alert alert-content-info-hide fade" style="border-radius: 0px" role="alert">
+                    <button onclick="ApiService.HideAlertContent()" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <span name="alert-info-content"></span>
+                </div>
+
+                <!-- loader -->
+                <div id="loader-content" class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel xpanel-loader">
+                            <div class="container-loader">
+                                <div class="loader-content">
+                                    <img src="build/images/loading1.gif" width="10%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- panel breadcumps -->
+                <div name="col-breadcumps" class="col-md-12 col-sm-12 col-xs-12 col-breadcump-alert-hide" style="padding:0px;">
+                    <div class="x_panel cont-breadcumps">
+                        <ul name="breadcrumb" class="breadcrumb">
+                            <!-- <li class="active"><a href="#">Web Crawler</a></li>
+                                <li><a href="#"></a></li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- panel profile -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>List Data</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right !important">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-2 col-xs-4">
+                                        <label class="control-label">Show Data Size</label>
+                                        <select onchange="PageScript.ChangeSizePage()" name="size-table-page" class="select2_single form-control" tabindex="-1"
+                                            required>
+                                            <option value="10" selected>10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-7 col-sm-7 col-xs-4">
+                                    </div>
+
+                                    <!-- button -->
+                                    <div class="col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label">&nbsp;</label>
+                                        <button name="btn-submit-filtering" onclick="PageScript.AddData()" class="btn btn-success btn-block needsclick btn-add-data">
+                                            <i class="fa fa-plus-circle"></i> Add Data</button>
+                                    </div>
+                                </div>
+
+                                <br/>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <label class="control-label">Search Data</label>
+                                                <ul class="nav navbar-right panel_toolbox">
+                                                    <li style="float: right !important">
+                                                        <a class="collapse-link">
+                                                            <i class="fa fa-chevron-up"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="x_content">
+                                                <div class="row">
+                                                    <!-- filter search -->
+                                                    <div class="col-md-2 col-sm-2 col-xs-4">
+                                                        <label class="control-label">Search</label>
+                                                        <select onchange="PageScript.ChangeFilterForm()" class="form-control" name="filter-search" id="">
+                                                            <option value="name">Name</option>
+                                                            <option value="category">Category</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 col-xs-5">
+                                                        <label class="control-label">&nbsp;</label>
+                                                        <input name="filter-search" type="text" class="form-control" placeholder="search" />
+                                                        <span id="searchclear" onclick="PageScript.ClearSearch()" class="fa fa-remove" style="display: none;"></span>
+                                                    </div>
+                                                    <!-- button -->
+                                                    <div class="col-md-3 col-sm-3 col-xs-6">
+                                                        <label class="control-label">&nbsp;</label>
+                                                        <button name="btn-submit-filtering" onclick="PageScript.SearchData()" class="btn btn-success btn-block needsclick">Search</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div name="loader-content-table" class="loader-content-table attr-display-none">
+                                    <img src="build/images/loading1.gif" width="10%">
+                                </div>
+                                <!-- TABEL LIST PROJECT -->
+                                <table id="table-list-data" class="table table-striped table-bordered hover table-responsive" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th class="pos-relative default-cursor" onclick="PageScript.SortingData('default')">No.</th>
+                                            <th class="pos-relative default-cursor" onclick="PageScript.SortingData('name')">Name
+                                                <i name="icon-asc-name" class="fa fa-sort-up fa-lg pos-icon-sorting-up icon-sorting-inactive"></i>
+                                                <i name="icon-desc-name" class="fa fa-sort-down fa-lg pos-icon-sorting-down icon-sorting-inactive"></i>
+                                            </th>
+                                            <th class="pos-relative default-cursor" onclick="PageScript.SortingData('description')">Description
+                                                <i name="icon-asc-description" class="fa fa-sort-up fa-lg pos-icon-sorting-up icon-sorting-inactive"></i>
+                                                <i name="icon-desc-description" class="fa fa-sort-down fa-lg pos-icon-sorting-down icon-sorting-inactive"></i>
+                                            </th>
+                                            <th class="pos-relative default-cursor" onclick="PageScript.SortingData('id_category')">Category
+                                                <i name="icon-asc-category" class="fa fa-sort-up fa-lg pos-icon-sorting-up icon-sorting-inactive"></i>
+                                                <i name="icon-desc-category" class="fa fa-sort-down fa-lg pos-icon-sorting-down icon-sorting-inactive"></i>
+                                            </th>
+                                            <th class="pos-relative default-cursor" onclick="PageScript.SortingData('is_free')">Free
+                                                <i name="icon-asc-isfree" class="fa fa-sort-up fa-lg pos-icon-sorting-up icon-sorting-inactive"></i>
+                                                <i name="icon-desc-isfree" class="fa fa-sort-down fa-lg pos-icon-sorting-down icon-sorting-inactive"></i>
+                                            </th>
+                                            <th class="pos-relative default-cursor" onclick="PageScript.SortingData('data_date')">Date
+                                                <i name="icon-asc-date" class="fa fa-sort-up fa-lg pos-icon-sorting-up icon-sorting-inactive"></i>
+                                                <i name="icon-desc-date" class="fa fa-sort-down fa-lg pos-icon-sorting-down icon-sorting-inactive"></i>
+                                            </th>
+                                            <th width="20%">Action</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+
+                                <!-- -->
+                                <div class="dataTables_paginate paging_simple_numbers">
+                                    <ul class="pagination" name="container-paging">
+                                        &nbsp;
+                                    </ul>
+                                </div>
+                                <!-- -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    CMS Plexus
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Select -->
+    <script src="vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- Parsley -->
+    <script src="vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Datatables -->
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.js"></script>
+    <!-- custom js -->
+    <script src="build/js/self-script.js"></script>
+    <script src="build/js/data-page-script.js"></script>
+
+
+</body>
+
+</html>

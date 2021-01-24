@@ -1,0 +1,28 @@
+{
+    "status": "SUCCESS",
+    "dataTotal": 2,
+    "data": [
+        {
+            "id": "0",
+            "id_category": "01",
+            "username": "user_name",
+            "name": "Dummy User",
+            "email": "dummy@email.com",
+            "address": "Internet World",
+            "phone": "081000xxxx",
+            "register": "2020-04-04",
+            "category_name": "category 1"
+        },
+        {
+            "id": "1",
+            "id_category": "02",
+            "username": "user_two",
+            "name": "Dummy Two",
+            "email": "dummy_two@email.com",
+            "address": "Internet World",
+            "phone": "082000xxxx",
+            "register": "2020-04-04",
+            "category_name": "category 1"
+        }
+    ]
+}

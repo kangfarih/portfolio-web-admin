@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "dataTotal": 1,
+    "data": [
+        {
+            "id": 0,
+            "name": "Detail Data",
+            "description":"description one",
+            "category_name":"category 1",
+            "data_date":"2020-03-01",
+            "imagethumb_url":"./build/images/dummy/pict 1.png",
+            "isfree": 1,
+            "list_pinpoint":[
+                
+            ]
+        }
+    ]
+}

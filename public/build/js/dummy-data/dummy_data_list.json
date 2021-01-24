@@ -1,0 +1,46 @@
+{
+    "status": "SUCCESS",
+    "dataTotal": 5,
+    "data": [
+        {
+            "id": 0,
+            "name": "Data 1",
+            "description":"Description one",
+            "category_name":"Category 1",
+            "data_date":"2020-03-01",
+            "isfree": 1
+        },
+        {
+            "id": 1,
+            "name": "Data 2",
+            "description":"Description two",
+            "category_name":"Category 1",
+            "data_date":"2020-03-01",
+            "isfree": 0
+        },
+        {
+            "id": 2,
+            "name": "Data 2",
+            "description":"Description three",
+            "category_name":"Category 2",
+            "data_date":"2020-03-01",
+            "isfree": 1
+        },
+        {
+            "id": 3,
+            "name": "Data 4",
+            "description":"Description four",
+            "category_name":"Category 2",
+            "data_date":"2020-03-01",
+            "isfree": 1
+        },
+        {
+            "id": 4,
+            "name": "Data 1",
+            "description":"Description one",
+            "category_name":"Category 1",
+            "data_date":"2020-03-01",
+            "isfree": 1
+        }
+    ]
+}

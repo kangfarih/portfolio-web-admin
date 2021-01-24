@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CMS Plexus</title>
+
+  <!-- Bootstrap -->
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- Custom Theme Style -->
+  <link href="build/css/custom.css" rel="stylesheet">
+  <link href="build/css/self-style.css" rel="stylesheet">
+
+</head>
+
+<body class="nav-md">
+  <div id="loader">
+    <img src="build/images/loading1.gif" width="10%">
+  </div>
+
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title">KK
+              <span>CMS Plexus</span>
+            </a>
+          </div>
+
+          <div class="clearfix"></div>
+          <br/>
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3></h3>
+              <ul class="nav side-menu">
+                <li class="">
+                  <a href="config.html">
+                    <i class="fa fa-gear"></i>Config</a>
+                </li>
+                <li class="">
+                  <a href="category.html">
+                    <i class="fa fa-group"></i>Category</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /sidebar menu -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <span name="nama-user"></span>
+                  <span class=" fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li>
+                    <a href="profile.html"> Profile</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;" onclick="Helper.Logout()">
+                      <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+        <!-- alert info -->
+        <div name="alert-info-content" class="alert alert-content-info-hide fade" style="border-radius: 0px" role="alert">
+          <button onclick="ApiService.HideAlertContent()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+          <span name="alert-info-content"></span>
+        </div>
+
+        <!-- loader -->
+        <div id="loader-content" class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel xpanel-loader">
+              <!-- loading -->
+              <div class="container-loader">
+                <div class="loader-content">
+                  <img src="build/images/loading1.gif" width="10%">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- panel breadcumps -->
+        <div name="col-breadcumps" class="col-md-12 col-sm-12 col-xs-12 col-breadcump-alert-hide" style="padding:0px;">
+          <div class="x_panel cont-breadcumps">
+            <ul name="breadcrumb" class="breadcrumb">
+              <!-- <li class="active"><a href="#">Web Crawler</a></li>
+                              <li><a href="#"></a></li> -->
+            </ul>
+          </div>
+        </div>
+        <!-- panel about us -->
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>About Us</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li style="float: right !important">
+                    <a class="collapse-link">
+                      <i class="fa fa-chevron-up"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <form name="about-content-form" class="form-horizontal form-label-left" data-parsley-validate>
+                  <!-- About Content -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="about-content">Content</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <textarea type="textarea" name="about-content" class="form-control col-md-7 col-xs-12" rows="10" style="max-width: 100%; min-width: 100%; min-height: 200px;"></textarea>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-content" class="form-group">
+                        <button onclick="PageScript.EditContent()" class="btn btn-success btn-block needsclick">Update Content</button>
+                      </div>
+                      <div name="loading-edit-content" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- About Image  -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="about-image">Image (800x426)</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="about-image" class="form-control col-md-7 col-xs-12 hidden">
+                      <img src="" id="image" height="200px" />
+                      <input type="file" name="about-file" accept="image/png, image/jpeg, image/gif" class="form-control col-md-7 col-xs-12" data-parsley-trigger="change"
+                        data-parsley-imagemindimensions="800x426">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-image" class="form-group">
+                        <button onclick="PageScript.EditImage()" class="btn btn-success btn-block needsclick">Update Image</button>
+                      </div>
+                      <div name="loading-edit-image" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- About Total Category  -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="about-total-category">Total Category</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="about-total-category"  class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-total-category" class="form-group">
+                        <button onclick="PageScript.EditTotalCategory()" class="btn btn-success btn-block needsclick">Update Total Category</button>
+                      </div>
+                      <div name="loading-edit-total-category" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- About Total Image  -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="about-total-image">Total Image</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="about-total-image" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-total-image" class="form-group">
+                        <button onclick="PageScript.EditTotalImage()" class="btn btn-success btn-block needsclick">Update Total Image</button>
+                      </div>
+                      <div name="loading-edit-total-image" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- About Total Project  -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="about-total-project">Total Project</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="about-total-project" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-total-project" class="form-group">
+                        <button onclick="PageScript.EditTotalProject()" class="btn btn-success btn-block needsclick">Update Total Project</button>
+                      </div>
+                      <div name="loading-edit-total-project" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ln_solid"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- panel contact -->
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Contact</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li style="float: right !important">
+                    <a class="collapse-link">
+                      <i class="fa fa-chevron-up"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <form name="about-contact-form" class="form-horizontal form-label-left" data-parsley-validate>
+
+                  <!-- about address -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contact-address">Address</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <textarea type="textarea" name="contact-address" class="form-control col-md-7 col-xs-12" rows="5" style="resize:none;"></textarea>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-address" class="form-group">
+                        <button onclick="PageScript.EditAddress()" class="btn btn-success btn-block needsclick">Update Address</button>
+                      </div>
+                      <div name="loading-edit-address" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- about email -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contact-email">Email</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="email" name="contact-email" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-email" class="form-group">
+                        <button onclick="PageScript.EditEmail()" class="btn btn-success btn-block needsclick">Update Email</button>
+                      </div>
+                      <div name="loading-edit-email" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- about phone -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contact-phone">Mobile Phone</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="phone" name="contact-phone" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-phone" class="form-group">
+                        <button onclick="PageScript.EditPhone()" class="btn btn-success btn-block needsclick">Update Phone</button>
+                      </div>
+                      <div name="loading-edit-phone" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- about office phone -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contact-office">Office Mobile Phone</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="phone" name="contact-office" class="form-control col-md-7 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-office" class="form-group">
+                        <button onclick="PageScript.EditOffice()" class="btn btn-success btn-block needsclick">Update Office Phone</button>
+                      </div>
+                      <div name="loading-edit-office" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- about workday -->
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="contact-workday">Workday</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <textarea type="textarea" name="contact-workday" class="form-control col-md-7 col-xs-12" rows="3" style="resize:none;"></textarea>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div name="cont-btn-edit-workday" class="form-group">
+                        <button onclick="PageScript.EditWorkday()" class="btn btn-success btn-block needsclick">Update Workday</button>
+                      </div>
+                      <div name="loading-edit-workday" class="attr-display-none" style="text-align: center">
+                        <img src="build/images/loading1.gif" width="10%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ln_solid"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Neviim Crawler
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="vendors/nprogress/nprogress.js"></script>
+  <!-- Parsley -->
+  <script src="vendors/parsleyjs/dist/parsley.min.js"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="build/js/custom.js"></script>
+  <!-- custom js -->
+  <script src="build/js/self-script.js"></script>
+  <script src="build/js/config-page-script.js"></script>
+
+</body>
+
+</html>

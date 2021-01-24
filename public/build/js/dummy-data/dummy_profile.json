@@ -1,0 +1,16 @@
+{
+    "status": "SUCCESS",
+    "name": "dummy_user",
+    "token": "!@#$%^&*()token)(*&^%$#@!",
+    "data": [
+        {
+            "id": "0",
+            "id_category": "01",
+            "username": "user_name",
+            "name": "Dummy User",
+            "email": "dummy@email.com",
+            "address": "Internet World",
+            "phone": "081000xxxx"
+        }
+    ]
+}

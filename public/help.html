@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CMS Plexus</title>
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.css" rel="stylesheet">
+    <link href="build/css/self-style.css" rel="stylesheet">
+
+</head>
+
+<body class="nav-md">
+    <div id="loader">
+        <img src="build/images/loading1.gif" width="10%">
+    </div>
+
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title">KK
+                            <span>CMS Plexus</span>
+                        </a>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <br/>
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3></h3>
+                            <ul class="nav side-menu">
+                                <li class="">
+                                    <a href="config.html">
+                                        <i class="fa fa-gear"></i>Config</a>
+                                </li>
+                                <li class="">
+                                    <a href="category.html">
+                                        <i class="fa fa-group"></i>Category</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span name="nama-user"></span>
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li>
+                                        <a href="profile.html"> Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" onclick="Helper.Logout()">
+                                            <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+
+                <!-- alert info -->
+                <div name="alert-info-content" class="alert alert-content-info-hide fade" style="border-radius: 0px" role="alert">
+                    <button onclick="ApiService.HideAlertContent()" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <span name="alert-info-content"></span>
+                </div>
+
+                <!-- loader -->
+                <div id="loader-content" class="row hidden">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel xpanel-loader">
+                            <!-- loading -->
+                            <div class="container-loader">
+                                <div class="loader-content">
+                                    <img src="build/images/loading1.gif" width="10%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- panel breadcumps -->
+                <div name="col-breadcumps" class="col-md-12 col-sm-12 col-xs-12 col-breadcump-alert-hide" style="padding:0px;">
+                    <div class="x_panel cont-breadcumps">
+                        <ul name="breadcrumb" class="breadcrumb">
+                            <!-- <li class="active"><a href="#">Web Crawler</a></li>
+                              <li><a href="#"></a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- panel about us -->
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Panduan Penggunaan</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right !important">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="main_content" class="x_content">
+                                <iframe src="Panduan" frameborder="0" scrolling="no" onload="resizeIframe(this)" style="width: 100%;height: 690px;border: 0px; overflow: hidden;"></iframe>
+                                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- Parsley -->
+    <script src="vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.js"></script>
+    <!-- custom js -->
+    <script src="build/js/self-script.js"></script>
+    <script src="build/js/help-page-script.js"></script>
+
+</body>
+
+</html>
