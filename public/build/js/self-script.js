@@ -280,7 +280,7 @@ var Helper = new function () {
 
 		}
 		$('ul[name="breadcrumb"]').html(str);
-		$('title').html('Plexus - ' + arrBreadcump[arrBreadcump.length - 1].name)
+		$('title').html('Admin Portofolio - ' + arrBreadcump[arrBreadcump.length - 1].name)
 	}
 
 	this.SetCookie = function (key, value) {
@@ -521,7 +521,7 @@ var Layout = new function () {
 	}
 
 	this.footer = function () {
-		$('div[class="pull-right"]').html("PLEXUS ADMIN CMS")
+		$('div[class="pull-right"]').html("Admin Portofolio ADMIN CMS")
 	}
 
 	this.SetFavicon = function () {

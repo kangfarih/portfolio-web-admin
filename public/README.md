@@ -2,7 +2,7 @@
 
 ## What is this repository for? ###
 
-* ADMIN CMS for PLEXUS DEV
+* ADMIN CMS for Admin Portofolio DEV
 
 ## How do I get set up? ###
 
