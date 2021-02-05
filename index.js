@@ -33,6 +33,6 @@ app.use(function (err, req, res, next) {
 
 // listen for requests:
 let listen_port = process.env.port;
-app.listen(listen_port || 80, function () {
-    console.log('Now listening for request');
+app.listen(listen_port || 8000, function () {
+    console.log('Now listening for request\nWeb Server is available at http://localhost:8000');
 });

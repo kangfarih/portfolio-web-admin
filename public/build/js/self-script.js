@@ -13,7 +13,7 @@ var ApiService = new function () {
 	this.use_dummy_data = true;
 	//parameter
 	this.timeoutDuration = 600000;
-	this.urlDomain = "http://localhost/";
+	this.urlDomain = "http://localhost:8000/";
 	this.baseUrlApi = "http://app360.kunkun360.com/";
 
 	//mesage
